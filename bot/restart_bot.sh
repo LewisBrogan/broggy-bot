@@ -13,5 +13,5 @@ echo "Pulling latest code..."
 git pull
 
 echo "Starting bot..."
-nohup python3 bot/bot.py &
+( nohup python3 bot/bot.py > bot.log 2>&1 & )
 echo "Bot started."
