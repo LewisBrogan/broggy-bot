@@ -1,8 +1,12 @@
-from typing import Any
 import discord
+import sys
 import os
+
+from typing import Any
 from discord import Intents
-from .docker_commands import docker_status_command
+from bot.docker_commands import docker_status_command
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir)))
 
 class MyBot(discord.Client):
     """A custom Discord bot class."""
