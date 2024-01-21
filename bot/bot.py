@@ -10,9 +10,10 @@ class MyBot(commands.Bot):
 
     async def setup_hook(self):
         self.tree.add_command(dockerstatus)
+        await self.tree.sync()
 
-async def on_ready(self):
-    print(f"Logged in as {self.user.name}")
+    async def on_ready(self):
+        print(f"Logged in as {self.user.name}")
 
 @discord.app_commands.command(name="dockerstatus", description="Get Docker status")
 async def dockerstatus(interaction: discord.Interaction):
