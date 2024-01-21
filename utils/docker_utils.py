@@ -1,7 +1,17 @@
+import asyncio
 import subprocess
 
-def get_docker_status():
+async def get_docker_status():
     try:
-        return subprocess.check_output(["docker", "ps"], text=True)
-    except subprocess.CalledProcessError as e:
+        process = await asyncio.create_subprocess_shell(
+            "docker ps",
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE
+        )
+        stdout, stderr = await process.communicate()
+        if stdout:
+            return stdout.decode()
+        else:
+            return f"An error occurred: {stderr.decode()}"
+    except Exception as e:
         return f"An error occurred: {e}"
