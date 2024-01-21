@@ -7,8 +7,13 @@ class MyBot(discord.Client):
     """A custom Discord bot class."""
 
     async def on_ready(self):
-        """Print a message indicating that we have successfully logged in."""
-        print(f"We have logged in as {self.user}")
+        """Announce in a specific channel that the bot has successfully logged in."""
+        channel_id = 1198411010512535653
+        channel = self.get_channel(channel_id)
+        if channel:
+            await channel.send(f'{self.user} has logged in!')
+        else:
+            print(f"Could not find channel with ID {channel_id}")
 
     async def on_message(self, message: discord.Message):
         """Respond to messages starting with '$hello'."""
