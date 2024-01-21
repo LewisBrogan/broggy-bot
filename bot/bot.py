@@ -5,7 +5,7 @@ from utils.docker_utils import get_docker_status
 
 class MyBot(commands.Bot):
     def __init__(self):
-        intents = discord.Intents.default()
+        intents = discord.Intents.all()
         super().__init__(command_prefix="!", intents=intents)
 
     async def setup_hook(self):
