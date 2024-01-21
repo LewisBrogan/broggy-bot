@@ -9,7 +9,7 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'run-discord-bot = bot:run_bot',
+            'run-discord-bot = bot.bot:run_bot',
         ],
     },
 )
