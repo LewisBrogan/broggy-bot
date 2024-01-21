@@ -1,2 +1,4 @@
 discord.py
 discord-py-slash-command
+discord-py-interactions
+discord_slash==3.7.0
