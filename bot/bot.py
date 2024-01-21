@@ -9,8 +9,8 @@ class MyBot(commands.Bot):
         super().__init__(command_prefix="!", intents=intents)
 
     async def setup_hook(self):
-        guild_id = 1198410710540107926
-        guild = discord.Object(id=guild_id)
+        # guild_id = 1198410710540107926
+        # guild = discord.Object(id=guild_id)
 
         # Register command for a specific guild
         # self.tree.add_command(dockerstatus, guild=guild)
@@ -19,7 +19,7 @@ class MyBot(commands.Bot):
         self.tree.add_command(dockerstatus)
 
         # Sync the commands
-        await self.tree.sync(guild=guild)  # Sync for the specific guild
+        # await self.tree.sync(guild=guild)  # Sync for the specific guild
         await self.tree.sync()  # Sync globally
 
     async def on_ready(self):
