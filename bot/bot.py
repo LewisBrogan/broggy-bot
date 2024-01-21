@@ -13,7 +13,7 @@ class MyBot(commands.Bot):
         guild = discord.Object(id=guild_id)
 
         # Register command for a specific guild
-        self.tree.add_command(dockerstatus, guild=guild)
+        # self.tree.add_command(dockerstatus, guild=guild)
 
         # Also register command globally
         self.tree.add_command(dockerstatus)
