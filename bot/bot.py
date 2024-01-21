@@ -1,7 +1,7 @@
 import os
 import discord
 from discord.ext import commands
-from utils.docker_utils import get_docker_status
+from utils.docker_status import get_docker_status
 
 class MyBot(commands.Bot):
     def __init__(self):
