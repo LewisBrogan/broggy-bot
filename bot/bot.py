@@ -2,6 +2,7 @@ from typing import Any
 import discord
 import os
 from discord import Intents
+from .docker_commands import docker_status_command
 
 class MyBot(discord.Client):
     """A custom Discord bot class."""
@@ -14,6 +15,14 @@ class MyBot(discord.Client):
             await channel.send(f'{self.user} has logged in!')
         else:
             print(f"Could not find channel with ID {channel_id}")
+            
+    async def on_message(self, message: discord.Message):
+        if message.author == self.user:
+            return
+
+        if message.content.startswith('$dockerstatus'):
+            response = await docker_status_command()
+            await message.channel.send(response)
             
     # async def on_message(self, message: discord.Message):
     #     """Respond to messages starting with '$hello'."""
