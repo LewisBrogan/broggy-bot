@@ -14,14 +14,14 @@ class MyBot(discord.Client):
             await channel.send(f'{self.user} has logged in!')
         else:
             print(f"Could not find channel with ID {channel_id}")
+            
+    # async def on_message(self, message: discord.Message):
+    #     """Respond to messages starting with '$hello'."""
+    #     if message.author == self.user:
+    #         return
 
-    async def on_message(self, message: discord.Message):
-        """Respond to messages starting with '$hello'."""
-        if message.author == self.user:
-            return
-
-        if message.content.startswith('$hello'):
-            await message.channel.send('Hello!')
+    #     if message.content.startswith('$hello'):
+    #         await message.channel.send('Hello!')
 
 def run_bot():
     """Run the Discord bot."""
