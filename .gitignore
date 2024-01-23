@@ -1,0 +1,7 @@
+bot/__pycache__
+utils/__pycache__
+
+*.log
+
+Dockerfile
+broggy-discord-bot.code-workspace
